@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+   <head>
+      <title><%= title %></title>
+   </head>
+
+   <style type="text/css">
+     img{
+      width: 100%;
+     }
+
+     h2{
+      padding: 0 596px;
+     }
+
+     form{
+      margin-left: 561px;
+     }
+
+   </style>
+
+   <body>
+      <div class = "header">
+            
+      <img src="http://www.indian-railway-pnr-status.co.in/images/banner1.png">
+      </div>
+
+      <h2>Register Form</h2>
+         
+      <form method="post" action="/signup">
+         <% if(typeof(errorMessage) !== 'undefined') {%>
+         <span><%= errorMessage %></span>
+         <% } %>
+         <p>
+            <label for="username">Username</label>
+            <input type="text" name="username" id="username"
+               placeholder="username" required="true"/>
+         </p>
+         <p>
+            <label for="password">Password</label>
+            <input type="text" name="password" id="password"
+               placeholder="password" required="true"/>
+         </p>
+         <p>
+            <input type="submit" name="signup" id="signup" value="Register"/>
+            <a href="/signin" title="sign in">Sign In</a>
+         </p>
+      </form>
+   </body>
+</html>

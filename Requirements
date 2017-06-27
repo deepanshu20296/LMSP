@@ -1,0 +1,12 @@
+Requirements;
+grid for leave data
+leave: total, taken, left -- type of leave (ex: medical etc)
+dates can be edited before the leave is approved
+while applying specify start and end date
+senior can see the leaves taken by the employees
+senior can see the leave requests on his page and accept or reject (by prompt or something)
+3 levels: employees < senior < super senior
+home page - some info about 
+user will get a prompt whether his leave is accepted or rejected
+
+>>application submit button - action not given - button type

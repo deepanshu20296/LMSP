@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+   <head>
+      <title><%= title %></title>
+   </head>
+
+   <style type="text/css">
+     img{
+      width: 100%;
+     }
+
+     h3{
+      padding: 0 600px;
+     }
+
+     form{
+      margin-left: 500px;
+     }
+
+   </style>
+
+   <body>
+
+   		<div class = "header">
+   			
+   			<img src="http://www.indian-railway-pnr-status.co.in/images/banner1.png">
+   		</div>
+
+
+        <h3>
+            Welcome <strong><%= user.username %>!</strong>
+            <a href="/signout" title="sign out"> <br> Sign Out</a>
+        </h3>
+
+        <form method="post" action="/">    <!--"/index or something"-->    <!--<form method="post" action="/"> -->
+
+      	  <p>
+      		<label for="leavedata">Provide the reason for leave here:</label>
+           	<input type="text" name="leavedata" id="leavedata" placeholder="Reason" required="true"/>
+          </p>
+          <p>
+      		<input type="submit" name= "Data" id="Data" value="Submit"/>   <!--onclick="function();"-->
+
+      	  </p>
+        </form>
+
+   </body>
+</html>

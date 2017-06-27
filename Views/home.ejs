@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+    <head>
+       <title><%= title %></title>
+    </head>
+
+    <style type="text/css">
+      img{
+       width: 100%;
+      }
+
+      h2{
+       padding: 0 596px;
+      }
+
+      form{
+       margin-left: 561px;
+      }
+    </style>
+
+    <body>
+        <div class = "header">
+            
+            <img src="http://www.indian-railway-pnr-status.co.in/images/banner1.png">
+        </div>
+
+        <h2>Home Page</h2>
+
+        <form method="post" action="/home">
+          <% if(typeof(errorMessage) !== 'undefined') {%>
+          <span><%= errorMessage %></span>
+          <% } %>
+         
+          <p>
+             <input type="submit" name="Login" id="Login" value="Login"/>
+             <a href="/signin" title="sign in">Sign In</a>
+          </p>
+
+        </form>
+
+    </body>      
+
+</html>
