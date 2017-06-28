@@ -31,16 +31,31 @@
             <a href="/signout" title="sign out"> <br> Sign Out</a>
         </h3>
 
-        <form method="post" action="/">    <!--"/index or something"-->    <!--<form method="post" action="/"> -->
+        <form method="post" action="/index">          <!--<form method="post" action="/"> -->
 
-      	  <p>
-      		<label for="leavedata">Provide the reason for leave here:</label>
-           	<input type="text" name="leavedata" id="leavedata" placeholder="Reason" required="true"/>
-          </p>
-          <p>
-      		<input type="submit" name= "Data" id="Data" value="Submit"/>   <!--onclick="function();"-->
+           <p>
+      	      Total Leaves Allowed
+           	  <input type="text" name="total" id="total" size=3 value=20 readonly />
+           </p>
 
-      	  </p>
+           <p>
+      	      Leaves Taken
+           	  <input type="text" name="taken" id="taken" size=3 value="" readonly />
+           </p>
+
+           <p>
+      	      Leaves Left
+           	  <input type="text" name="left" id="left" size=3 value="" readonly />
+           </p>
+
+      	   <p>
+      	      <label for="leavedata">Provide the reason for leave here:</label>
+           	  <input type="text" name="leavedata" id="leavedata" placeholder="Reason" required="true"/>
+           </p>
+
+           <p>
+      	   	  <input type="submit" name= "Data" id="Data" value="Submit"/>   <!--onclick="function();"-->
+      	   </p>
         </form>
 
    </body>

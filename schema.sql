@@ -8,12 +8,15 @@ drop table if exists tblUsers;
 
 create table if not exists tblUsers(
    userId integer primary key auto_increment,
-   username varchar(100) unique,
-   password varchar(100)
+   username varchar(50) unique,
+   password varchar(100),
+   fname varchar(50),
+   lname varchar(50),
+   designation varchar(50)
 )engine=innodb; 
 
 create table if not exists leave_data(
-    username varchar(100),
+    username varchar(50),
     leavedata varchar(200)
 )engine=innodb;
 
