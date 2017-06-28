@@ -38,7 +38,7 @@
       // sign in
       // POST
       var signInPost = function(req, res, next) {
-         passport.authenticate('local', { successRedirect: '/',
+         passport.authenticate('local', { successRedirect: '/index',
                                 failureRedirect: '/signin'}, function(err, user, info) {
             if(err) {
                return res.render('signin', {title: 'Sign In', errorMessage: err.message});
@@ -51,7 +51,7 @@
                if(err) {
                   return res.render('signin', {title: 'Sign In', errorMessage: err.message});
                } else {
-                  return res.redirect('/');
+                  return res.redirect('/index');
                }
             });
          })(req, res, next);
@@ -72,6 +72,7 @@
       var signUpPost = function(req, res, next) {
          var user = req.body;
          var usernamePromise = null;
+         var designation = req.body.designation;
          usernamePromise = new Model.User({username: user.username}).fetch();
 
          return usernamePromise.then(function(model) { 
@@ -81,8 +82,8 @@
 
                var password = user.password;
                var hash = bcrypt.hashSync(password);
-
-               var signUpUser = new Model.User({username: user.username, password: hash});
+               var designation = req.body.designation;
+               var signUpUser = new Model.User({username: user.username, password: hash, designation: designation});
 
                signUpUser.save().then(function(model) {
                   // sign-in the newly registered user
