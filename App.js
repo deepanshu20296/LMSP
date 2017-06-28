@@ -62,7 +62,9 @@
             // GET
             app.get('/', route.home);
 
-            app.get('/index', route.index); 
+            app.get('/index', route.index);
+
+            app.post('/index', route.indexPost) ;
 
             // signin
             // GET

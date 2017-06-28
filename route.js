@@ -1,7 +1,8 @@
       var passport = require('passport');
       var bcrypt = require('bcrypt-nodejs');
 
-      // custom library
+      var designation;
+       // custom library
       // model
       var Model = require('./model');
 
@@ -18,6 +19,10 @@
             }
             res.render('index', {title: 'User Home', user: user});
          }
+      };
+
+      var indexPost = funtion(req, res, next) {
+
       };
 
       // home
@@ -51,6 +56,7 @@
                if(err) {
                   return res.render('signin', {title: 'Sign In', errorMessage: err.message});
                } else {
+                  //if(designation=='engineer')
                   return res.redirect('/index');
                }
             });
@@ -72,7 +78,6 @@
       var signUpPost = function(req, res, next) {
          var user = req.body;
          var usernamePromise = null;
-         var designation = req.body.designation;
          usernamePromise = new Model.User({username: user.username}).fetch();
 
          return usernamePromise.then(function(model) { 
@@ -81,9 +86,11 @@
             } else {
 
                var password = user.password;
+               var fname = user.fname;
+               var lname = user.lname;
                var hash = bcrypt.hashSync(password);
-               var designation = req.body.designation;
-               var signUpUser = new Model.User({username: user.username, password: hash, designation: designation});
+               designation = req.body.designation;
+               var signUpUser = new Model.User({username: user.username, password: hash, designation: designation, fname: fname, lname: lname});
 
                signUpUser.save().then(function(model) {
                   // sign-in the newly registered user
