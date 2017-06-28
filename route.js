@@ -22,7 +22,7 @@
 
       // home
       var home = function(req, res, next) {
-         if(req.isAuthenticated()) 
+         //if(req.isAuthenticated()) 
             //res.redirect('/');
          res.render('home', {title: 'Home'});
       }; 
