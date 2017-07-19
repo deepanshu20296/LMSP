@@ -56,15 +56,17 @@
             app.use(passport.initialize());
             app.use(passport.session());
 
-            //GET
+            // home
+            // GET
             app.get('/home', route.home)
 
             // GET
             app.get('/', route.home);
 
+            // index
             app.get('/index', route.index);
 
-            app.post('/index', route.indexPost) ;
+            //app.post('/index', route.indexPost) ;
 
             // signin
             // GET
@@ -81,11 +83,6 @@
             // logout
             // GET
             app.get('/signout', route.signOut);
-
-
-
-            //app.get('/Data', route.data);
-
 
 
 
