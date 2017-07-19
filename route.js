@@ -21,9 +21,9 @@
          }
       };
 
-      var indexPost = funtion(req, res, next) {
+      /*var indexPost = funtion(req, res, next) {
 
-      };
+      };*/
 
       // home
       var home = function(req, res, next) {
